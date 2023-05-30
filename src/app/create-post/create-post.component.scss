@@ -4,6 +4,11 @@
     width: 100%;
 }
 
+.heading {
+    font-size: 3rem;
+    font-weight: 400;
+}
+
 .input {
     display: flex;
     flex-direction: column;
@@ -33,10 +38,27 @@ select {
 .desc {
     height: 20em;
     width: 100%;
+    padding: 0;
+    resize: none;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    border: 2px solid #bcbcbc;
 }
 
 .btn {
-    margin: 1em 0 0 auto;
+    margin: 1em 0 0 0;
+
+    
+}
+.btn__submit {
+    margin: 0 0 0 auto;
+    float: right;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em 2em;
+    background-color: #0a88f0;
+    color: white;
+    font-size: 1.2rem;
 }
 
 .wrapper {
