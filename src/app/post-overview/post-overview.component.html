@@ -1,0 +1,46 @@
+<article class="background">
+    <a [routerLink]="['/create']" routerLinkActive="router-link-active"  class="cta">
+        <button class="cta__button">Aktion registrieren</button>
+    </a>
+    <section class="bottom__content">   
+        <section class="timeline">
+            <ul class="timeline__list">
+                <li *ngFor="let post of posts; let i = index" class="timeline__post">
+                    <section class="top"> 
+                        <p class="timeline__type">{{ post.type }} </p>
+                        <p class="timeline__date">{{ post.date }}</p>
+                    </section>
+                    <p class="timeline__employee bottom">{{ post.employee }}</p>
+                </li>
+            </ul>
+        </section>
+        <section>
+            
+            <ul class="posts">
+                <li *ngFor="let post of posts" class="post">
+                    <section class="head">
+                        <section class="dataset">
+                            <p class="employee">{{ post.employee }}</p>
+                            <p class="created">Erstellt: {{ post.date }}</p>
+                        </section>
+                        <section class="priority dataset">
+                            <p class="occured title">Ereignis: </p>
+                            <p class="occured__date">{{ post.dateFulfilled }}</p>
+                        </section>
+                        <section class="status dataset">
+                            <p class="status__title title">Status:</p>
+                            <p class="status__value">{{ post.status }}</p>
+                        </section>
+                        <section class="priority dataset">
+                            <p class="priority__title title">Priorität:</p>
+                            <p class="priority__value">{{ post.priority }}</p>
+                        </section>
+                    </section>
+                    <section class="content-area">
+                        <p class="description">{{ post.description }}</p>
+                    </section>
+                </li>
+            </ul>
+        </section>
+    </section> 
+</article>

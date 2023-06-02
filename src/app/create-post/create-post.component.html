@@ -1,23 +1,29 @@
-<div class="wrapper">
 <article class="create__post">
     <h1 class="heading">Erstelle einen neuen Eintrag</h1>
     <section class="row">
         <section class="input">
             <label for="employee">Bearbeiter:</label>
-            <input type="text" name="employee">
+            <input type="text" name="employee" [(ngModel)]="employee">
         </section>
         <section class="input">
             <label for="type">Typ:</label>
-            <select name="type" id="">
+            <select name="type" id="" [(ngModel)]="type">
                 <option value="wartung">Wartung</option>
                 <option value="störung">Störung</option>
+            </select>
+        </section>
+        <section class="input">
+            <label for="status">Status:</label>
+            <select name="status" id="" [(ngModel)]="status">
+                <option value="offen">Offen</option>
+                <option value="Abgeschlossen">Abgeschlossen</option>
             </select>
         </section>
     </section>
     <section class="row">
         <section class="input">
             <label for="priority">Priorität:</label>
-            <select name="priority" id="">
+            <select name="priority" id="" [(ngModel)]="priority">
                 <option value="high">High</option>
                 <option value="medium">Medium</option>
                 <option value="low">Low</option>
@@ -25,21 +31,20 @@
         </section>
         <section class="input">
             <label for="date-today">Datum:</label>
-            <input type="date" name="date-today">
+            <input type="date" name="date-today" [(ngModel)]="date">
         </section>
         <section class="input">
-            <label for="date-fulfilled">Bearbeitet:</label>
-            <input type="date" name="date-fulfilled">
+            <label for="date-fulfilled" >Bearbeitet:</label>
+            <input type="date" name="date-fulfilled" [(ngModel)]="dateFulfilled">
         </section>
     </section>
     <section>
         <h2>Beschreibung</h2>
         <div>
-            <textarea name="desc" type="text" class="desc"></textarea>
+            <textarea name="desc" type="text" class="desc" [(ngModel)]="description"></textarea>
         </div>
     </section>
     <section class="btn">
-        <button class="btn__submit">Erstellen</button>
+        <button class="btn__submit" (click)="submit()">Erstellen</button>
     </section>
 </article>
-</div>

@@ -1,0 +1,148 @@
+.background {
+    background-color: #efefef;
+    padding: 4em;
+    max-width: 80em;
+}
+
+.bottom__content {
+    display: flex;
+}
+
+.cta {
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+}
+
+.cta__button {
+    margin: 0 1em 0.8em auto;
+    background-color: #0a88f0;
+    border: none;
+    border-radius: 5px;
+    padding: 0.4em 1.5em;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.timeline {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 2em 2em 2em 4em;
+    height: auto;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .timeline__post {
+        position: relative;
+        margin: 0 0 1em  0;
+        font-family: 'Poppins', sans-serif;
+
+
+        p {
+            margin: 0;
+        }
+
+        &::before {
+            content: '';
+            width: 0.8em;
+            height: 0.8em;
+            border-radius: 100px;
+            background-color: #0a88f0;
+            position: absolute;
+            top: 50%;
+            left: -2em;
+        }
+
+        &::after {
+            content: '';
+            width: 0.2em;
+            height: 2.4em;
+            background-color: #B1B2B5;
+            position: absolute;
+            top: 90%;
+            left: -1.7em;
+
+        }
+
+        .top {
+            display: flex;
+            margin: 0 0 0.4em 0;
+            align-items: center;
+        }
+
+        .timeline__type {
+            font-size: 1.2rem;
+        }
+
+        .timeline__date {
+            color: #6e6e6e;
+            margin: 0 0 0 1em;
+            position: relative;
+
+            &::before {
+                content: '';
+                width: 0.2em;
+                height: 0.2em;
+                border-radius: 100px;
+                background-color: #6e6e6e;
+                position: absolute;
+                left: -0.5em;
+                top: 49%;
+            }
+        }
+
+        .timeline__employee {
+            color: #5b5b5b;
+        }
+    }
+
+    
+}
+
+.posts {
+    padding: 0 1em;
+    margin: 0;
+    max-width: 100em;
+
+
+    .post {
+        background-color: #fff;
+        padding:1em  2em;
+        border-radius: 5px;
+        list-style-type: none;
+        margin: 0 0 1em 0;
+    
+        .head{
+            display: flex;
+            font-family: 'Poppins', sans-serif;
+            border-bottom: 1px solid #b1b2b5;
+            justify-content: space-between;
+            .dataset {
+                margin: 0 2em 0 0;
+
+                .p {
+                    margin: 0;
+                }
+            }
+    
+            .title {
+                color: #8f8f8f;
+            }
+    
+            .created {
+                color: #5b5b5b;
+            }
+    
+            .description {
+                font-family: 'Jost', sans-serif;
+            }
+        }
+    }
+}
+
