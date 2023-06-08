@@ -5,7 +5,7 @@
     <section class="bottom__content">   
         <section class="timeline">
             <ul class="timeline__list">
-                <li *ngFor="let post of posts; let i = index" class="timeline__post">
+                <li *ngFor="let post of posts | async; let i = index" class="timeline__post">
                     <section class="top"> 
                         <p class="timeline__type">{{ post.type }} </p>
                         <p class="timeline__date">{{ post.date }}</p>
@@ -17,7 +17,7 @@
         <section>
             
             <ul class="posts">
-                <li *ngFor="let post of posts" class="post">
+                <li *ngFor="let post of posts | async" class="post">
                     <section class="head">
                         <section class="dataset">
                             <p class="employee">{{ post.employee }}</p>

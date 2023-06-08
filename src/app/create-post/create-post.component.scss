@@ -4,6 +4,24 @@
     width: 60em;
 }
 
+.link {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 1em;
+    top: 0.5em;
+
+    p {
+        margin-left: 0.5em;
+    }
+}
+
+.link {
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    color: #545454;
+}
+
 .heading {
     font-size: 3rem;
     font-weight: 400;

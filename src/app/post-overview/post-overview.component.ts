@@ -1,14 +1,16 @@
-import { Component, ChangeDetectorRef } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, ChangeDetectorRef, ChangeDetectionStrategy, OnInit, OnChanges } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { Observable, of, map } from 'rxjs';
 import { CreatePostService } from '../create-post.service';
 
 @Component({
   selector: 'app-post-overview',
   templateUrl: './post-overview.component.html',
-  styleUrls: ['./post-overview.component.scss']
+  styleUrls: ['./post-overview.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Default
 })
 export class PostOverviewComponent {
-  public posts: any[] = [
+  public posts: Observable<any[]> = of([
     {
       employee: 'John Doe',
       date: '02.01.1900',
@@ -27,13 +29,19 @@ export class PostOverviewComponent {
       type:'Wartung',
       description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
     }
-  ]
+  ]);
+  
 
-  constructor(private createPostService: CreatePostService) {
+  constructor(private createPostService: CreatePostService, private router: Router) {
     this.createPostService.newPost.subscribe(post => {
-      const newPosts = [...this.posts, post]
-      this.posts = newPosts
-      console.log(this.posts)
-    })
+      this.posts.pipe(
+        map(existingPosts => [...existingPosts, post])
+      ).subscribe(updatedPosts => {
+        console.log(updatedPosts)
+        this.posts = of(updatedPosts);
+      });
+    });
   }
+
+
 }
